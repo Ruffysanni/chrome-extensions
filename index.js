@@ -47,7 +47,7 @@ function render(lead){
         // listItems += "<li><a target='_blank' href='"+ myLeads[i]+"'>" + myLeads[i] +"</a></li>"; 
         listItems += `
         <li>
-            <a target='_blank' href='${lead[i]}'> ${lead[i]}</a>
+            <a target='_blank' href='${lead[i]}'>www.${lead[i]}.com</a>
         </li>`; 
         //console.log(listItems);
     }
@@ -56,6 +56,9 @@ function render(lead){
 
 inputBtn.addEventListener("click", function(){
     let inputVal = document.querySelector("input").value;
+    if(inputVal === ""){
+        alert("Input value cannot be blank!")
+    }
     myLeads.push(inputVal);
     setTimeout(function(){
         document.getElementById("input-el").value = "";
